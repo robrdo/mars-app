@@ -10,9 +10,9 @@ import hero from './assets/images/hero.png';
 const cookies = new Cookies();
 
 const initTimers: Timer[] = [
-  { timerId: 'timer1', initTime: 360 },
-  { timerId: 'timer2', initTime: 540 },
-  { timerId: 'timer3', initTime: 900 },
+  { timerId: 'timer1', initTime: 10 },
+  { timerId: 'timer2', initTime: 30 },
+  { timerId: 'timer3', initTime: 60 },
 ]
 
 const rocketCounts = initTimers.length
@@ -33,7 +33,7 @@ function App() {
         initTime: value && (!isNaN(value)) ? value : x.initTime
       }
     }))
-    console.log(timers)
+    console.log('once?')
   }, [])
 
   const timerTimeoutHandler = (timerId: string) => {
@@ -41,7 +41,7 @@ function App() {
     const rocketsLeft = rocketCounts - expiredSet.size
     alert(rocketsLeft > 0
       ? `You missed a whole rocket to mars! ${rocketsLeft} left`
-      : 'Aya, you missed a last rocket to mars!')
+      : 'Aya, you missed the last rocket to mars!')
   }
 
   const timerResetHandler = (timerId: string) => {
@@ -65,7 +65,8 @@ function App() {
           return (
             <div className='timer'>
               <TimerComponent
-                key={index}
+                key={timer.timerId}
+                rocketId={index + 1}
                 {...timer}
                 timerDefault={initTimers[index].initTime}
                 notifyOnTimeout={timerTimeoutHandler}

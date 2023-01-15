@@ -4,6 +4,7 @@ import { Timer } from "../common";
 import './TimerComponent.css';
 
 export type TimerProps = Timer & {
+    rocketId:number
     timerDefault: number
     notifyOnTimeout: (timerId: string) => any
     notifyOntimerReset: (timerId: string) => any
@@ -15,6 +16,7 @@ export function TimerComponent(props: TimerProps) {
     const { initTime,
         timerId,
         timerDefault,
+        rocketId,
         notifyOnTimeout,
         notifyOntimerReset } = props
 
@@ -52,7 +54,7 @@ export function TimerComponent(props: TimerProps) {
 
     return (
         <div className="timer-container">
-            <div className="timer-row">Countdown to lift off:</div>
+            <div className="timer-row">{`Rocket ${rocketId} launching in:`}</div>
             <div className="clock-container timer-row">
                 <div className="number clock-row">{minutes < 10 ? '0' : ''}{minutes}</div>
                 <div className="clock-row">:</div>
