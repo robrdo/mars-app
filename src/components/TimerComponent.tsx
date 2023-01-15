@@ -4,7 +4,7 @@ import { Timer } from "../common";
 import './TimerComponent.css';
 
 export type TimerProps = Timer & {
-    rocketId:number
+    rocketId: number
     timerDefault: number
     notifyOnTimeout: (timerId: string) => any
     notifyOntimerReset: (timerId: string) => any
@@ -13,7 +13,8 @@ export type TimerProps = Timer & {
 const cookies = new Cookies();
 
 export function TimerComponent(props: TimerProps) {
-    const { initTime,
+    const {
+        initTime,
         timerId,
         timerDefault,
         rocketId,
@@ -21,7 +22,6 @@ export function TimerComponent(props: TimerProps) {
         notifyOntimerReset } = props
 
     const [time, setTime] = useState(initTime)
-
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -53,7 +53,7 @@ export function TimerComponent(props: TimerProps) {
     const minutes = Math.floor(time / 60)
 
     return (
-        <div className="timer-container">
+        <div className="timer-container" key={timerId}>
             <div className="timer-row">{`Rocket ${rocketId} launching in:`}</div>
             <div className="clock-container timer-row">
                 <div className="number clock-row">{minutes < 10 ? '0' : ''}{minutes}</div>

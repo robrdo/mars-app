@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Mars-App interview project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To start working with a project 
+1. Clone github repository
+2. in terminal execute command npm ci
+3. in terminal execute command npm run build 
+4. in terminal execute npm run start to launch the app
+
 
 ## Available Scripts
 

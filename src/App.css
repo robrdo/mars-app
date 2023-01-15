@@ -34,14 +34,13 @@
 }
 
 .text-header {
-  width: fit-content;
+  font-size: 28px;
   color: rgb(114, 182, 238);
 }
 
-.text {
-  width: 100%;
+.text-paragraph {
+  max-width: 250px;
   word-wrap: break-word;
-  width: fit-content;
 }
 
 .mars-image {
@@ -67,6 +66,7 @@
 
   .text-container {
     margin-right: none;
+    margin-bottom: 20px;
     align-items: center;
     text-align: center
   }
