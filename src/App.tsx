@@ -10,9 +10,9 @@ import { TimerComponent } from './components/TimerComponent';
 const cookies = new Cookies();
 
 const initTimers: Timer[] = [
-  { timerId: 'timer1', initTime: 10 },
-  { timerId: 'timer2', initTime: 30 },
-  { timerId: 'timer3', initTime: 60 },
+  { timerId: 'timer1', initTime: 360 },
+  { timerId: 'timer2', initTime: 180 },
+  { timerId: 'timer3', initTime: 500 },
 ]
 
 
